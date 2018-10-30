@@ -10,7 +10,101 @@ import dao.Operations;
 import dao.OperationsImp;
 
 public class MainClass {
-	// Define Command Variables
+	
+  	public static void main(String[] args) {
+
+		OperationsImp operations = new OperationsImp();
+		
+ 
+	    System.out.println("Enter the operation:");
+	    System.out.println("Add : CREATE");
+	    System.out.println("Delete item : DELETE");
+	    System.out.println("Update buy quantity : UPDATEBUY");
+	    System.out.println("Update sold quantity : UPDATESELL");
+	    System.out.println("Get report : REPORT");
+
+	    Scanner scanner = new Scanner(System.in);
+	    String  x;
+	    int quantity;
+	    String itemName;
+	    double costPrice;
+	    double sellPrice;
+
+
+	        System.out.println("Enter operation you want to perform :");
+	        x = scanner.nextLine().toUpperCase();
+	        switch (x) {
+
+	            case "CREATE":
+	                System.out.println("Enter item name");
+	                itemName = scanner.nextLine();
+	                System.out.println("Enter cost price");
+	                costPrice = scanner.nextDouble();
+	                System.out.println("Enter sell price");
+	                sellPrice = scanner.nextDouble();
+	                try {
+	                    operations.create(itemName, costPrice, sellPrice);
+	                } catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+
+	                break;
+
+	            case "DELETE":
+	                System.out.println("Enter item name for delete");
+	                itemName = scanner.nextLine();
+	                try {
+	                    operations.delete(itemName);
+	                } catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	                break;
+
+	            case "UPDATEBUY":
+	                System.out.println("Enter item name");
+	                itemName = scanner.nextLine();
+	                System.out.println("Enter bought item number");
+	                quantity = scanner.nextInt();
+	                try {
+	                    operations.updateBuy(itemName, quantity);
+	                } catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	                break;
+
+	            case "UPDATESELL":
+	                System.out.println("Enter item name for delete");
+	                itemName = scanner.nextLine();
+	                System.out.println("Enter sold item number");
+	                quantity = scanner.nextInt();
+	                try {
+	                    operations.updateSell(itemName, quantity);
+	                } catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	                break;
+
+	            case "REPORT":
+	                //System.out.println("********REPORT***********");
+	                try {
+	                    operations.report();
+	                } catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	                break;
+
+	        	 default:
+	                System.out.println("Invalid input");
+	                break;
+	        }
+  	}
+}
+
+
+		 
+		 
+		 
+    /*//Define Command Variables
 	private static final String createCmd = "CREATE";
 	private static final String deleteCmd = "DELETE";
 	private static final String updateBuyCmd = "UPDATEBUY";
@@ -20,12 +114,7 @@ public class MainClass {
 	static {
 		System.gc();
 	}
-
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-
-		Operations operations = new OperationsImp();
-		// TODO Auto-generated method stub
-		try {
+	try {
 			Scanner scanner = new Scanner(System.in);
 			String lineText = scanner.nextLine();
 
@@ -51,15 +140,12 @@ public class MainClass {
 				lineText = scanner.nextLine();
 			}
 			scanner.close();
-//			Let's just hope it works..input please
+			
 		} catch (ArrayIndexOutOfBoundsException ex1) {
-			System.out.println("Invalid Arguments Passed, Truncating the Process");
+			System.out.println("Invalid input, Truncating the Process");
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage() + ", Truncating the Process");
 		}
 
-	}
-
-}
-
+	} */

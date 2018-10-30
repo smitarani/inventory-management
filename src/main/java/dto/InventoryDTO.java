@@ -59,47 +59,10 @@ public class InventoryDTO {
 		    }
 
 		   
-		  @Override
+		    @Override
 		    public String toString() {
-		        return "InventoryItemDTO{" +
-		                "item_id=" + item_id +
-		                ", item_name='" + item_name + '\'' +
-		                ", cost_price=" + cost_price +
-		                ", selling_price=" + selling_price +
-		                ", quantity=" + quantity +
-		                '}';
+		    	 return   "\t"+item_name + "\t\t" + cost_price + "\t\t" + selling_price +"\t\t" + quantity ;
 		    }
 
-		public static void create(String string, Double valueOf, Double valueOf2) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public static void delete(String string) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public static void updateBuy(String string, Integer valueOf) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public static void updateSell(String string, Integer valueOf) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public static void updateSellprice(String string, Double valueOf) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public static void report() {
-			// TODO Auto-generated method stub
-			
-		}
-
-			
 }	
 

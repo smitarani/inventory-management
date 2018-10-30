@@ -49,7 +49,7 @@ public class DaoTest {
 				}
 		        System.out.println(testItem.size());
 		        
-		        assertEquals(4, testItem.size());
+		        assertEquals(7, testItem.size());
 		        
 		        assertEquals(2, testItem.get(1).getId());
 		        assertEquals("Food01", testItem.get(1).getItem_name());
@@ -64,7 +64,7 @@ public class DaoTest {
 		    public void testNoDAOFound() {
 		    	List<InventoryDTO> testItem = null;
 				testItem = operationsImpl.getItemList();
-		    	assertEquals(4, testItem.size());
+		    	assertEquals(7, testItem.size());
 		  }
 		
 	}

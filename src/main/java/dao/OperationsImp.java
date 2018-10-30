@@ -277,6 +277,8 @@ import dto.InventoryDTO;
 	    }
 
 	    public void report() {
+	    	
+	    	getItemList();
 	        double total_value = 0;
 	        System.out.println("***INVENTORY REPORT***");
 	        System.out.println("Item Name     Bought At     Sold At        AvailableQty     Value ");
@@ -337,6 +339,10 @@ import dto.InventoryDTO;
 	        }//end try
 
 	        getItemList();
+	        System.out.println("***INVENTORY REPORT***");
+	        System.out.println("Item Name     Bought At     Sold At        AvailableQty     Value ");
+	        System.out.println("----------    ----------    ---------      -------------    ------- ");
+	        
 	        report();
 
 

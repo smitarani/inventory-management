@@ -6,7 +6,7 @@ import dto.InventoryDTO;
 
 public interface Operations {
 
-//read database
+//read from database
 public List<InventoryDTO> getItemList () throws ExceptionExample;
 
 public void create(String itemName, double costPrice, double sellingPrice);
@@ -20,4 +20,6 @@ public void updateSell(String itemName, int quantity) throws ExceptionExample;
 public void report();
 
 public void updateSellPrice(String itemName, double newSellPrice);
+
+
 }

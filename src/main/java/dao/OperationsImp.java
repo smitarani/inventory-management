@@ -7,7 +7,8 @@ import dto.InventoryDTO;
 
 	public class OperationsImp implements Operations {
 
-	    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+//		So insert is fine now..how to generate report as per question
+	    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	    static final String DB_URL = "jdbc:mysql://localhost:33060/inventory_management";
 
 	    //  Database credentials
@@ -276,9 +277,11 @@ import dto.InventoryDTO;
 	    }
 
 	    public void report() {
-
 	        double total_value = 0;
 	        System.out.println("***INVENTORY REPORT***");
+	        System.out.println("Item Name     Bought At     Sold At        AvailableQty     Value ");
+	        System.out.println("----------    ----------    ---------      -------------    ------- ");
+	        
 	        for (InventoryDTO item:itemList) {
 	            double value = item.getCost_price() * item.getquantity();
 	            System.out.println(item.toString()+" value" +value);
@@ -338,6 +341,8 @@ import dto.InventoryDTO;
 
 
 	    }
+
+		
 
 	}
 

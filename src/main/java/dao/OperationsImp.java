@@ -7,7 +7,6 @@ import dto.InventoryDTO;
 
 	public class OperationsImp implements Operations {
 
-//		So insert is fine now..how to generate report as per question
 	    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	    static final String DB_URL = "jdbc:mysql://localhost:33060/inventory_management";
 
